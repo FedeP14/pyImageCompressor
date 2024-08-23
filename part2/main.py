@@ -40,7 +40,7 @@ def main():
 
     # Salva l'immagine compressa nella cartella 
     compress_image_name = f"compressed_{selected_image}"
-    compressed_image_path = os.path.join(os.getcwd(), "part2/out", compress_image_name)
+    compressed_image_path = os.path.join(os.getcwd(), "part2\out", compress_image_name)
     
     save_image(compressed_img, compressed_image_path)
 
