@@ -7,7 +7,7 @@ from cli.user_input import get_window_size, get_threshold
 
 # Funzione principale per il compressore di immagini con CLI
 def main():
-    resource_folder = os.path.join(os.getcwd(), "part2/resources")
+    resource_folder = os.path.join(os.getcwd(), "resources")
 
     # Seleziona l'immagine da processare
     selected_image, img_path = select_image(resource_folder)
@@ -40,7 +40,7 @@ def main():
 
     # Salva l'immagine compressa nella cartella 
     compress_image_name = f"compressed_{selected_image}"
-    compressed_image_path = os.path.join(os.getcwd(), "part2\out", compress_image_name)
+    compressed_image_path = os.path.join(os.getcwd(), "out", compress_image_name)
     
     save_image(compressed_img, compressed_image_path)
 
