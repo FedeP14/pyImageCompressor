@@ -1,5 +1,5 @@
 import numpy as np
-from dct_compression import block_dct2, block_idct2, dct
+from part2.compression.dct_functions import block_dct2, block_idct2, dct
 
 def test_dct2d():
     # Matrice di esempio
