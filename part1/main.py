@@ -1,19 +1,44 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from dct2_manual import compare_dct_times
+from part1.compare_dct2 import compare_dct_times
 
-# Parametri per la prova
+# Define a list of different sizes for the Discrete Cosine Transform (DCT) to be tested
 N_values = [500, 750, 1000, 2500, 5000, 7500, 10000, 12500, 15000]
 
-# Confronta i tempi di DCT manuale vs scipy
-times_manual, times_scipy = compare_dct_times(N_values)
+# Call the function to compare execution times of homemade DCT and scipy's DCT for the given sizes
+times_homemade, times_scipy = compare_dct_times(N_values)
 
-# Plot dei risultati su scala semilogaritmica
+# Print the results for each size
+for i in range(len(N_values)):
+    print(f"N = {N_values[i]}")
+    print(f"Manual DCT time: {times_homemade[i]:.5f} s")
+    print(f"Scipy DCT time: {times_scipy[i]:.5f} s")
+
+# Create a new figure for plotting the results
 plt.figure()
-plt.semilogy(N_values, times_manual, label='DCT manuale (N^3)')
-plt.semilogy(N_values, times_scipy, label='DCT scipy (N^2 log N)')
-plt.xlabel('Dimensione N')
-plt.ylabel('Tempo (s)')
-plt.title('Confronto Tempi di Esecuzione DCT2')
+
+# Plot the execution times on a semilogarithmic scale for better visualization
+plt.semilogy(N_values, times_homemade, label='Home made DCT')
+plt.semilogy(N_values, times_scipy, label='Scipy DCT')
+
+# Label the axes
+plt.xlabel('Size N')
+plt.ylabel('Time (s)')
+
+# Add a title to the plot
+plt.title('Comparison of DCT2 Execution Times')
+
+# Add a legend to distinguish between manual and scipy DCT times
 plt.legend()
-plt.savefig('out\\dct_times.png')
+
+# Add a grid to the plot for better readability, with both major and minor lines
+plt.grid(True, which="both", ls="--")
+
+# Print a message indicating that the plot is being saved
+print("Saving the plot in out folder...")
+
+# Save the plot as a PNG file in the 'out' directory
+plt.savefig('out/dct_times.png')
+
+# Display the plot
+plt.show()
