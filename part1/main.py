@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from part1.compare_dct2 import compare_dct_times
+from compare_dct2 import compare_dct_times
 
 # Define a list of different sizes for the Discrete Cosine Transform (DCT) to be tested
 N_values = [500, 750, 1000, 2500, 5000, 7500, 10000, 12500, 15000]
