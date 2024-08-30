@@ -2,7 +2,7 @@ import numpy as np
 from compression.dct_functions import block_dct2, block_idct2, dct
 
 def test_dct2d():
-    # Matrice di esempio
+    # Example matrix
     matrix = np.array([
         [231, 32, 233, 161, 24, 71, 140, 245],
         [247, 40, 248, 245, 124, 204, 36, 107],
@@ -14,15 +14,15 @@ def test_dct2d():
         [87, 149, 57, 192, 65, 129, 178, 228]
     ])
 
-    # Calcola DCT
+    # Compute 2D DCT
     dct_result = block_dct2(matrix)
     
-    # Stampa i risultati della DCT2D
+    # Print the results of the 2D DCT
     print("DCT2D Result:")
     print(dct_result)
 
 def test_idct2d():
-    # Matrice di esempio
+    # Example matrix
     matrix = np.array([
         [231, 32, 233, 161, 24, 71, 140, 245],
         [247, 40, 248, 245, 124, 204, 36, 107],
@@ -34,16 +34,16 @@ def test_idct2d():
         [87, 149, 57, 192, 65, 129, 178, 228]
     ])
 
-    # Calcola DCT e IDCT
+    # Compute 2D DCT and then inverse DCT
     dct_result = block_dct2(matrix)
     idct_result = block_idct2(dct_result)
 
-    # Stampa i risultati della IDCT2D
+    # Print the results of the 2D IDCT
     print("IDCT2D Result:")
     print(idct_result)
 
 def test_dct1d():
-    # Matrice di esempio
+    # Example matrix
     matrix = np.array([
         [231, 32, 233, 161, 24, 71, 140, 245],
         [247, 40, 248, 245, 124, 204, 36, 107],
@@ -55,15 +55,15 @@ def test_dct1d():
         [87, 149, 57, 192, 65, 129, 178, 228]
     ])
 
-    # Calcola DCT monodimensionale sulla prima riga
+    # Compute 1D DCT on the first row
     dct1d = dct(matrix[0], norm='ortho')
 
-    # Stampa i risultati della DCT1D in notazione scientifica
-    print("DCT1D Result (in notazione scientifica):")
+    # Print the results of the 1D DCT in scientific notation
+    print("DCT1D Result (in scientific notation):")
     formatted_dct1d = ["{:.2e}".format(val) for val in dct1d]
     print(" ".join(formatted_dct1d))
 
-# Blocco principale per eseguire i test
+# Main block to execute the tests
 if __name__ == "__main__":
     print("Select the test to run:")
     print("1. DCT2D Test")
@@ -79,11 +79,9 @@ if __name__ == "__main__":
     elif test_choice == "3":
         test_dct1d()
     elif test_choice == "4":
-        print("Esecuzione test DCT2D")
+        print("Running DCT2D Test")
         test_dct2d()
-        print("\nEsecuzione test IDCT2D")
+        print("\nRunning IDCT2D Test")
         test_idct2d()
-        print("\nEsecuzione test DCT1D")
+        print("\nRunning DCT1D Test")
         test_dct1d()
-
-

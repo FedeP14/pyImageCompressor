@@ -1,4 +1,4 @@
-# Funzione per ottenere l'ampiezza delle finestre F
+# Function to get the window size F
 def get_window_size():
     try:
         F = int(input("Enter the window size F: "))
@@ -7,7 +7,7 @@ def get_window_size():
         print("Invalid input. Please enter an integer.")
         return None
 
-# Funzione per ottenere la soglia d
+# Function to get the threshold d
 def get_threshold(F):
     max_d = 2 * F - 2
 

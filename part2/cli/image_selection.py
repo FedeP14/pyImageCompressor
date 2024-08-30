@@ -1,22 +1,22 @@
 import os
 from inputoutput.file_io import list_files
 
-# Funzione per selezionare l'immagine da processare
+# Function to select the image to process
 def select_image(resource_folder):
-    # Ottieni la lista dei file nella cartella "resources"
+    # Get the list of files in the "resources" folder
     file_list = list_files(resource_folder)
     
-    # Verifica che ci siano file nella cartella
+    # Check if there are any files in the folder
     if not file_list:
         print("No images found in the 'resources' folder.")
         return None, None
 
-    # Stampa la lista dei file disponibili
+    # Print the list of available files
     print("Available images:")
     for i, file in enumerate(file_list):
-        print(f"{i+1}. {file}")
+        print(f"{i + 1}. {file}")
 
-    # L'utente seleziona l'immagine da caricare
+    # User selects the image to load
     try:
         selected_image_index = int(input("Select an image to process: "))
         if selected_image_index < 1 or selected_image_index > len(file_list):
