@@ -26,14 +26,19 @@
     source venv/bin/activate
     ```
 
-4. Select the project you want to run
+4. Install the requirements
+    ```bash
+    pip install -r requirements.txt 
+    ```
+
+5. Select the project you want to run
     ```bash
     cd part1
     ```
     ```bash
     cd part2
     ```
-5. Run the project
+6. Run the project
     ```bash
     python main.py
     ```
